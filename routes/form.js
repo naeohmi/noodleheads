@@ -1,14 +1,13 @@
 let payLoad = document.querySelector('#payload');
 
 //stubs
-function createItem(e) {
+let createItem = (e) => {
     e.preventDefault();
 
     console.log('create a resource')
-}
+};
 
-
-function readAllItems(e) {
+let readAllItems = (e) => {
     e.preventDefault();
     console.log('read all the resources');
     axios.get('https://intense-headland-84262.herokuapp.com/api/tasks/')
@@ -24,19 +23,19 @@ function readAllItems(e) {
         .catch(function(err) {
             console.log(err)
         })
-}
+};
 
-function readItem(e) {
+let readItem = (e) => {
     e.preventDefault();
     console.log('read one item');
-}
+};
 
-function updateItem(e) {
+let updateItem = (e) => {
     e.preventDefault();
     console.log('update a resource');
-}
+};
 
-function deleteItem(e) {
+let deleteItem = (e) => {
     e.preventDefault();
     console.log('delete a resource');
 
