@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var form = require('./routes/form');
 
 var app = express();
 
@@ -23,24 +24,25 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/', form);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 
@@ -48,14 +50,14 @@ app.use(function(err, req, res, next) {
 let baseURL = 'https://intense-headland-84262.herokuapp.com/api/tasks/';
 
 function getData() {
-  //axios.get('https://yamilmeal.herokuapp.com/api/meals')
-  axios.get('https://damp-refuge-76823.herokuapp.com/')
-  .then(function(res) {
-    console.log(res)
-  })
-  .catch(function(err) {
-    console.log(err)
-  })
+    //axios.get('https://yamilmeal.herokuapp.com/api/meals')
+    axios.get('https://damp-refuge-76823.herokuapp.com/')
+        .then(function(res) {
+            console.log(res)
+        })
+        .catch(function(err) {
+            console.log(err)
+        })
 }
 
 
