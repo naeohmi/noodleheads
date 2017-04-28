@@ -43,4 +43,62 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+//console.log('Hello');
+let baseURL = 'https://intense-headland-84262.herokuapp.com/api/tasks/';
+
+function getData() {
+  //axios.get('https://yamilmeal.herokuapp.com/api/meals')
+  axios.get('https://damp-refuge-76823.herokuapp.com/')
+  .then(function(res) {
+    console.log(res)
+  })
+  .catch(function(err) {
+    console.log(err)
+  })
+}
+
+
+/*axios.get(baseURL)
+.then(function(res) {
+  data = res.data.data;
+  data.forEach(function(a) {
+      console.log(a.item, ':::', a.minutes);
+  })
+})
+*/
+/*
+function postData(item, minutes) {
+  axios.post(baseURL, {
+    item: item,
+    minutes: minutes
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+let getSpecificTask = (id) => {
+  return axios.get(baseURL + id)
+}
+
+
+  axios.all([
+    getSpecificTask(2),
+    getSpecificTask(8),
+    getSpecificTask(4),
+    getSpecificTask(9)
+    ])
+  .then(axios.spread(function(a,b,c,d) {
+    console.log(a.data.data);
+    console.log(b.data.data);
+    console.log(c.data.data);
+    console.log(d.data.data);
+  })).catch(function(err) { console.log('err:::', err) })
+
+*/
+
 module.exports = app;
