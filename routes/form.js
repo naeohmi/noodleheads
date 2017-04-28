@@ -3,8 +3,27 @@ let payLoad = document.querySelector('#payload');
 //stubs
 let createItem = (e) => {
     e.preventDefault();
+    /*stop the form from
+     submitting or doing any default behaivior */
+    let newItem = document.querySelector('#james').value;
+    let newMinutes = document.querySelector('#wong').value;
 
-    console.log('create a resource')
+    //  TODO use the api you create to
+    //  make an ajax (AXIOS????) call with the REST verb "POST"
+    axios.post('http://intense-headland-84262.herokuapp.com/api/tasks/', {
+            item: newItem,
+            minutes: newMinutes
+        })
+        .then((res) => {
+            alert(newItem + newMinutes)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+};
+
+
+console.log('create a resource')
 };
 
 let readAllItems = (e) => {
@@ -39,11 +58,11 @@ let deleteItem = (e) => {
     e.preventDefault();
     console.log('delete a resource');
 
-if (event.target.tagName.toLowerCase() === 'span') {
-    let e_id = event.target.id;
-    console.log(event.target);
-    confirm(`Are you sure you want to delete ID ${e_id.split('_').item}?`);
-  }
+    if (event.target.tagName.toLowerCase() === 'span') {
+        let e_id = event.target.id;
+        console.log(event.target);
+        confirm(`Are you sure you want to delete ID ${e_id.split('_').item}?`);
+    }
 }
 
 //register event listeners
