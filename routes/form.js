@@ -1,3 +1,11 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    res.render('index', { title: 'Express' });
+});
+
 let payLoad = document.querySelector('#payload');
 
 //stubs
@@ -20,10 +28,6 @@ let createItem = (e) => {
         .catch((err) => {
             console.log(err)
         })
-};
-
-
-console.log('create a resource')
 };
 
 let readAllItems = (e) => {
@@ -75,3 +79,5 @@ document.querySelectorAll('#payload') //event delegation, delegate event to the 
     .forEach((c) => {
         c.addEventListener('click', deleteItem)
     });
+
+module.exports = router;
