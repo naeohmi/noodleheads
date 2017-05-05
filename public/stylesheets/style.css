@@ -42,53 +42,30 @@ button {
 .btn1 {
     background-color: #4CAF50;
 }
-
-
-/* Green */
-
 .btn2 {
     background-color: #008CBA;
 }
-
-
-/* Blue */
-
 .btn3 {
     background-color: #f44336;
 }
-
-
-/* Red */
-
 .btn4 {
     background-color: #e7e7e7;
     color: black;
 }
-
-
-/* Gray */
-
 .btn5 {
     background-color: #555555;
 }
-
-
-/* Black */
-
 #payload {
     margin: 20px 0 0 0;
     text-align: left;
 }
-
 #payload div {
     border-bottom: 1px solid #000;
     padding: 10px;
 }
-
 #payload div:hover {
     background-color: #efefef;
 }
-
 #payload div>span {
     cursor: pointer;
     float: right;
